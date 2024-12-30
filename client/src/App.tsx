@@ -1,35 +1,73 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from 'react';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [activeSection, setActiveSection] = useState('home');
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    document.querySelectorAll('section').forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const scrollToSection = (sectionId: string) => {
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="min-h-screen bg-white">
+      <nav className="sticky top-4 mx-auto max-w-2xl 
+                    bg-gradient-to-r from-blue-500 to-purple-600 
+                    rounded-full shadow-lg z-50">
+        <div className="px-4">
+          <div className="flex justify-center items-center h-14">
+            <div className="flex space-x-8">
+              {['home', 'products', 'about', 'contact'].map((section) => (
+                <button
+                  key={section}
+                  onClick={() => scrollToSection(section)}
+                  className={`px-4 py-2 font-medium rounded-lg transition-all duration-200 ease-in-out
+                    ${activeSection === section 
+                      ? 'bg-white text-purple-600' 
+                      : 'text-white hover:bg-white/10'}`}
+                >
+                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <section id="home" className="min-h-screen flex items-center justify-center">
+        <h1 className="text-4xl font-bold">Home Section</h1>
+      </section>
+
+      <section id="products" className="min-h-screen flex items-center justify-center">
+        <h1 className="text-4xl font-bold">Products Section</h1>
+      </section>
+
+      <section id="about" className="min-h-screen flex items-center justify-center">
+        <h1 className="text-4xl font-bold">About Section</h1>
+      </section>
+
+      <section id="contact" className="min-h-screen flex items-center justify-center">
+        <h1 className="text-4xl font-bold">Contact Section</h1>
+      </section>
+    </div>
+  );
 }
 
-export default App
+export default App;
