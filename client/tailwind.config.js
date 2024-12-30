@@ -1,4 +1,4 @@
-wind.config.js
+d.config.js
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
