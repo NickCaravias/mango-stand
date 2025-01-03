@@ -27,11 +27,11 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      <nav className="sticky top-4 mx-auto max-w-2xl 
+    <div className="min-h-screen w-full bg-white overflow-x-hidden">
+      <nav className="sticky top-0 left-0 right-0 w-screen 
                     bg-gradient-to-r from-blue-500 to-purple-600 
-                    rounded-full shadow-lg z-50">
-        <div className="px-4">
+                    shadow-lg z-50">
+        <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-center items-center h-14">
             <div className="flex space-x-8">
               {['home', 'products', 'about', 'contact'].map((section) => (
@@ -51,21 +51,23 @@ function App() {
         </div>
       </nav>
 
-      <section id="home" className="min-h-screen flex items-center justify-center">
-        <h1 className="text-4xl font-bold">Home Section</h1>
-      </section>
+      <main className="w-full">
+        <section id="home" className="min-h-screen flex items-center justify-center">
+          <h1 className="text-4xl font-bold">Home Section</h1>
+        </section>
 
-      <section id="products" className="min-h-screen flex items-center justify-center">
-        <h1 className="text-4xl font-bold">Products Section</h1>
-      </section>
+        <section id="products" className="min-h-screen flex items-center justify-center">
+          <h1 className="text-4xl font-bold">Products Section</h1>
+        </section>
 
-      <section id="about" className="min-h-screen flex items-center justify-center">
-        <h1 className="text-4xl font-bold">About Section</h1>
-      </section>
+        <section id="about" className="min-h-screen flex items-center justify-center">
+          <h1 className="text-4xl font-bold">About Section</h1>
+        </section>
 
-      <section id="contact" className="min-h-screen flex items-center justify-center">
-        <h1 className="text-4xl font-bold">Contact Section</h1>
-      </section>
+        <section id="contact" className="min-h-screen flex items-center justify-center">
+          <h1 className="text-4xl font-bold">Contact Section</h1>
+        </section>
+      </main>
     </div>
   );
 }
