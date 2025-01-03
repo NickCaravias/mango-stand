@@ -29,8 +29,8 @@ function App() {
   return (
     <div className="min-h-screen w-full bg-white overflow-x-hidden">
       <nav className="sticky top-0 left-0 right-0 w-screen 
-                    bg-gradient-to-r from-blue-500 to-purple-600 
-                    shadow-lg z-50">
+                    bg-gradient-to-r from-orange-400 to-orange-500 
+                    rounded-b-xl shadow-lg z-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-center items-center h-14">
             <div className="flex space-x-8">
@@ -40,7 +40,7 @@ function App() {
                   onClick={() => scrollToSection(section)}
                   className={`px-4 py-2 font-medium rounded-lg transition-all duration-200 ease-in-out
                     ${activeSection === section 
-                      ? 'bg-white text-purple-600' 
+                      ? 'bg-white text-orange-500' 
                       : 'text-white hover:bg-white/10'}`}
                 >
                   {section.charAt(0).toUpperCase() + section.slice(1)}
