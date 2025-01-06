@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:3000/api';
+const API_BASE_URL = process.env.REACT_APP_API_URL 
 
 // Helper to handle API errors
 const handleApiError = async (response) => {
@@ -9,7 +9,6 @@ const handleApiError = async (response) => {
   return response;
 };
 
-// GET method
 export const fetchGet = async (endpoint) => {
   try {
     const response = await fetch(`${API_BASE_URL}${endpoint}`, {
@@ -29,7 +28,7 @@ export const fetchGet = async (endpoint) => {
   }
 };
 
-// POST method
+
 export const fetchPost = async (endpoint, data) => {
   try {
     const response = await fetch(`${API_BASE_URL}${endpoint}`, {
@@ -50,7 +49,7 @@ export const fetchPost = async (endpoint, data) => {
   }
 };
 
-// PUT method
+
 export const fetchPut = async (endpoint, data) => {
   try {
     const response = await fetch(`${API_BASE_URL}${endpoint}`, {
@@ -71,7 +70,7 @@ export const fetchPut = async (endpoint, data) => {
   }
 };
 
-// DELETE method
+
 export const fetchDelete = async (endpoint) => {
   try {
     const response = await fetch(`${API_BASE_URL}${endpoint}`, {
