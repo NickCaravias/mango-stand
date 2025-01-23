@@ -9,7 +9,7 @@ const Products = () => {
       <div className="flex flex-wrap justify-center gap-6">
         <ProductBox
           name="Dehydrated Mangoes"
-          imageUrl="/mango-image.jpg"
+          imageUrl="/dried-mango.webp"
           price={5.99}
         />
         {/* Add more ProductBox components as needed */}

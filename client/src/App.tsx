@@ -43,7 +43,7 @@ function Home() {
 function App() {
   return (
     <Router>
-      <div className="min-h-screen w-screen bg-white overflow-x-hidden">
+      <div className="min-h-screen w-screen overflow-x-hidden bg-gradient-to-b from-orange-50 via-orange-100 to-orange-50">
         <Navigation />
         <main className="w-full">
           <Routes>
