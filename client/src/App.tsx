@@ -48,8 +48,8 @@ function App() {
         <main className="w-full">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/fruits" element={<Products />} />
+            <Route path="/tshirts" element={<About />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
