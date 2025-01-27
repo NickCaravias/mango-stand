@@ -13,7 +13,7 @@ function Navigation() {
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-center items-center">
           <div className="flex space-x-8">
-            {['home', 'products', 'about', 'contact'].map((section) => (
+            {['about', 'fruits', 'shirts', 'podcast'].map((section) => (
               <Link
                 key={section}
                 to={section === 'home' ? '/' : `/${section}`}
