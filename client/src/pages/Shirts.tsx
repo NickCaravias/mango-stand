@@ -1,18 +1,20 @@
 import React from 'react';
 import ProductBox from '../components/ProductBox';
 
+import IKnowWhatILike from '../assets/i-know-what-i-like.png';
+
 const Shirts = () => {
 
-  const Shirts = [
+  const shirts = [
     {
       name: 'I like what I like',
-      imageUrl: '/dried-mango.webp',
-      price: 5.99
+      imageUrl: IKnowWhatILike,
+      price: 15.99
     },
     {
         name: 'No bag please',
-        imageUrl: '/dried-mango.webp',
-        price: 5.99
+        imageUrl: IKnowWhatILike,
+        price: 15.99
     }
   ];
   
@@ -20,11 +22,14 @@ const Shirts = () => {
     <div className="min-h-screen p-8">
       <h1 className="text-4xl font-bold text-center mb-8">Our Shirts</h1>
       <div className="flex flex-wrap justify-center gap-6">
-        <ProductBox
-          name="Dehydrated Mangoes"
-          imageUrl="/dried-mango.webp"
-          price={5.99}
-        />
+        {shirts.map((shirt, index) => (
+            <ProductBox
+                key={index}
+                name={shirt.name}
+                imageUrl={shirt.imageUrl}
+                price={shirt.price}
+            />
+            ))}
       </div>
     </div>
   );
