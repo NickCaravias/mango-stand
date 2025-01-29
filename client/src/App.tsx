@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
-import Products from './pages/Products';
-import About from './pages/About';
-import Contact from './pages/Contact';
+import Audio from './pages/ArtilleryAudio';
+import Shirts from './pages/Shirts';
+import Mangos from './pages/Mangos';
+
 
 function Navigation() {
   const location = useLocation();
@@ -13,7 +14,7 @@ function Navigation() {
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-center items-center">
           <div className="flex space-x-8">
-            {['about', 'fruits', 'shirts', 'podcast'].map((section) => (
+            {['mangos', 'shirts', 'audio'].map((section) => (
               <Link
                 key={section}
                 to={section === 'home' ? '/' : `/${section}`}
@@ -48,9 +49,9 @@ function App() {
         <main className="w-full">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/fruits" element={<Products />} />
-            <Route path="/tshirts" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/mangos" element={<Mangos />} />
+            <Route path="/shirts" element={<Shirts />} />
+            <Route path="/audio" element={<Audio />} />
           </Routes>
         </main>
       </div>
