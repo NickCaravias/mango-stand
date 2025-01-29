@@ -15,6 +15,11 @@ const Shirts = () => {
         name: 'No bag please',
         imageUrl: IKnowWhatILike,
         price: 15.99
+    },
+    {
+        name: 'Other t shirt',
+        imageUrl: IKnowWhatILike,
+        price: 15.99
     }
   ];
   
